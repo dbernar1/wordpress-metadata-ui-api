@@ -1,4 +1,4 @@
-WordPress Fields UI API
+WordPress Metadata UI API
 =======================
 
 An API for building form UI for Wordpress content types(posts of all post types, taxonomy terms, Settings options, etc.).
