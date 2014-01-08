@@ -1,8 +1,8 @@
-## Background
+# Background
 
 Our original scope was to provide an API for adding form UI elements for post metadata. Currently in core, there is a simplistic UI for editing custom fields: a meta box on the Edit Post screen with textareas for each field's contents. This shows how unopinionated core has been in regards to metadata. From a developer's perspective, getter and setter functions exist with basic sanitization and authorization and that's it.
 
-# Research
+## Research
 
 This unopinionated respect for metadata is a good thing. It's opened up a vacuum for third-party libraries to fill, and experiment with different code architectural implementations. We've researched these libraries to take insight from their experience.
 
