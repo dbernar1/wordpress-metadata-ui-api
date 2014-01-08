@@ -11,4 +11,4 @@ Verbose documentation can be found in the [documentation directory](documentatio
 
 ## Contributing
 
-We welcome anyone's contributions to this project. However, we ask that you don't send an unwarranted pull request. We're probably aware that the functionality is missing. Feel free to open up an issue to discuss the changes you'd like to make first; after discussion we'll be happy to look at your pull request.
+We welcome contributions to this project. However, be aware that any functionality that is missing we're probably already aware of. Take a look through existing issues, and feel free to open up a new one to discuss the changes you'd like to make. After discussion in an issue we'll be happy to review a pull request.
