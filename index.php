@@ -116,10 +116,10 @@ function register_field( $args ) {
 
 add_action( 'init', 'register_form_containers' );
 /**
- * Register form contianer.
+ * Register form container.
  */
 function register_form_containers() {
-	// Insantiate a container.
+	// Instantiate a container.
 	$container = new WP_Post_Meta_Box();
 
 	// Relate a registered field to the container.
