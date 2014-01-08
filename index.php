@@ -1,4 +1,42 @@
 <?php
+
+add_action( 'init', 'add_metadata_to_staff' );
+/**
+ * Register form container.
+ */
+function add_metadata_to_staff() {
+	$fields = array(
+		'background_color' => array(
+			'applies_to' => 'staff',
+			'type' => 'color',
+			'auth_callback' => 'callback_function',
+			'sanitization_callback' => 'sanitization_function',
+		),
+		'email_address' => array(
+			'applies_to' => 'staff',
+			'type' => 'email',
+			'auth_callback' => 'same_callback_function',
+			'sanitization_callback' => 'a_different_sanitization_function',
+		),
+	);
+
+	// Instantiate a container.
+	$container = new WP_Post_Meta_Box();
+
+	// Relate a registered field to the container.
+	foreach ( $metadata as $field_slug => $field ) {
+		$container->add_field( array( 'slug' => $field_slug ) );
+
+		register_field( array(
+			'objects' => is_array( $field[ 'applies_to' ] ) ? $field[ 'applies_to' ] : array( $field[ 'applies_to' ] ),
+			'slug' => $field_slug,
+			'type' => $field[ 'type' ],
+			'auth_callback' => $field[ 'auth_callback' ],
+			'sanitization_callback' => $field[ 'sanitization_callback' ],
+		) );
+	}
+}
+
 /**
  * The state of the code here is in a pseudocode state, to provoke
  * discussion and documentation on our basic architectural decisions
@@ -76,19 +114,6 @@ class WP_Post_Meta_Box extends WP_Form_Object {
 	function get_fields() {}
 }
 
-add_action( 'init', 'register_custom_fields' );
-
-function register_custom_fields() {
-	register_field( array(
-		'objects' => array( 'post', 'page' ),
-		'slug' => 'background_color',
-		'type' => 'color', // Relates to a pre-defined class.
-		'auth_callback' => 'callback_function',
-		'sanitization_callback' => 'sanitization_function',
-	) );
-
-}
-
 /**
  * Field registration.
  *
@@ -112,18 +137,6 @@ function register_field( $args ) {
 			// register_meta etc depending on object type...
 		}
 	}
-}
-
-add_action( 'init', 'register_form_containers' );
-/**
- * Register form container.
- */
-function register_form_containers() {
-	// Instantiate a container.
-	$container = new WP_Post_Meta_Box();
-
-	// Relate a registered field to the container.
-	$container->add_field( array( 'slug' => 'background_color' ) );
 }
 
 /**
