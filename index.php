@@ -20,10 +20,7 @@ function add_metadata_to_staff() {
 	// Instantiate a container.
 	$container = new WP_Post_Meta_Box();
 
-	// Relate a registered field to the container.
 	foreach ( $metadata as $field_slug => $field ) {
-		$container->add_field( array( 'slug' => $field_slug ) );
-
 		register_field( array(
 			'objects' => is_array( $field[ 'applies_to' ] ) ? $field[ 'applies_to' ] : array( $field[ 'applies_to' ] ),
 			'slug' => $field_slug,
@@ -31,6 +28,9 @@ function add_metadata_to_staff() {
 			'auth_callback' => $field[ 'auth_callback' ],
 			'sanitization_callback' => $field[ 'sanitization_callback' ],
 		) );
+
+		// Relate a registered field to the container.
+		$container->add_field( array( 'slug' => $field_slug ) );
 	}
 }
 
