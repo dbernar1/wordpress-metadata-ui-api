@@ -13,7 +13,4 @@ These libraries include: [Custom Metadata Manager](https://github.com/Automattic
 
 We invited authors of these libraries to present an overview over Google Hangout of their library and anything of note that came up architecturally in development. All these can be found in [a Youtube playlist](https://www.youtube.com/playlist?list=PL3VvzYmI35PD9tDw0WlHYNoe7DVd4nfal).
 
-We also wrote up architectural overviews of these, so we could compare architecture at a glance rather than diving into code. [WordPress Extend (WPX)](postmeta-library-architectural-reviews/wp-extend.md)
-
-
-
+We also wrote up architectural overviews of these(time/effort permitting), so we could compare architecture at a glance rather than diving into code. [Fieldmanager](postmeta-library-architectural-reviews/fieldmanager.md), [Custom Metadata Manager](postmeta-library-architectural-reviews/custom-metadata-manager.md), [Custom Metaboxes and Fields](postmeta-library-architectural-reviews/cuztom-helper.md), [WordPress Extend (WPX)](postmeta-library-architectural-reviews/wp-extend.md)
