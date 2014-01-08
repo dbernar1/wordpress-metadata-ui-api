@@ -1,9 +1,6 @@
 <?php
 
 add_action( 'init', 'add_metadata_to_staff' );
-/**
- * Register form container.
- */
 function add_metadata_to_staff() {
 	$fields = array(
 		'background_color' => array(
